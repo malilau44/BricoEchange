@@ -1,30 +1,58 @@
-{% extends 'BlogFrontBundle::base.html.twig' %}
-{% block title %} {{parent()}}{{title}}{%endblock%}
+{% extends 'BricoAppliBundle::base.html.twig' %}
 
-    
+
 {% block contenu %}
-    <h2>Accueil - {{title}}</h2>
-    <p>Bienvenue sur notre blog! {{name}}</p>
-    <div class="clear"></div>
-    {% for key,value in posts %}
-        <div class="post">
-            <h3>{{loop.index}}/{{loop.length}} : 
-                <a href="{{path('view',{'id':key})}}">{{value.title|upper}}</a></h3>
-            <hr>
-            <p class="content">
-                {% if loop.index ==1 %}
-                    {{value.content|striptags}}
-                {% elseif loop.index ==2 %}  
-                     {{value.content|escape('html')}}
-                {% else  %}
-                    {% autoescape false %}
-                         {{value.content}}
-                    {% endautoescape %}
-                {% endif%}    
-            </p>
-            <p class="details">Le <span class="date">{{value.date}}</span>
-                par <span class="author">{{value.author|title}}</span>
-            </p>    
-        </div>
-    {%endfor%}
-{% endblock %}
+
+        <div class="clear"></div>
+            <ul class="menu">
+                <li><a href="inscription">inscription</a></li> 
+                <li><a href="Connexion">Connexion</a></li> 
+            </ul>
+            <div class="clear"></div>
+        
+        <hr>
+   
+
+    <nav class="navbar navbar-inverse navbar-fixed-top headroom">
+        {% block nav %}
+            <ul>
+                <li>Outils Jardinages</li>
+                <li>Outils auto mécanique</li>
+                <li>Outils Bricolages électriques</li>
+            </ul>
+                 {% endblock %} 
+    </nav>
+  
+    <hr>
+
+                  {% block article %}
+    <article>
+                <div>
+                  Je vends une brouette en bois (en l'état)<br>
+                  Brouette en bois occasion à vendre à La Montagne (44620) : Loire-Atlantique(44)<br>       
+                </div>
+         
+           
+    </article>
+    <article>
+         
+            <div>
+                Ponceuse à bande WURTH, Puissance : 1400 watt, Identique à FESTOOL BS 105<br>
+                Très Bon état. A retirer à Nantes quartier Zola au 0606060606<br>
+                </div>
+        
+         
+    </article>
+    <article>
+         
+            Vend perceuse neuf de la marque DEXTER POWER Bricolage<br>
+            Vend perceuse de la marque"DEXTER POWER" TRÈS BON PRIX 60 EUROS<br>
+            Si vous ete interresser me joindre 0606060606.chèque refusé<br>
+        
+         
+    </article> 
+    <hr>
+    {% endblock %}  
+    
+
+    {% endblock %}  

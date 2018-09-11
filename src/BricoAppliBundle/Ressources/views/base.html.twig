@@ -1,26 +1,25 @@
-{# empty Twig template #}
 {% extends '::base.html.twig'%}
-{% block title %} ENI Blog - {%endblock%}
+{% block title %} BRICO ECHANGE {%endblock%}
 {% block stylesheets %} 
-    <link href="{{asset('bundles/blogfront/css/general.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('bundles/bricofront/css/general.css')}}" rel="stylesheet" type="text/css"/>
+    	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="bundles/bricofront/css/bootstrap.css">
+	<link rel="stylesheet" href="bundles/bricofront/css/font-awesome.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="bundles/bricofront/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="bundles/bricofront/css/main.css">
+        
 {%endblock%}
 
 {% block body %}
     <header>
     {%block header %}
         <p class="logo">
-            <a href="{{path('index')}}">
-                <img src="{{asset('bundles/blogfront/img/logo_eni.jpg')}}" alt="logo ENI" class="logoeni"/>
-            </a>
-        <h1>ENI BLOG</h1>
-        <div class="clear"></div>
-        <ul class="menu">
-  {# path appelle la route index qui se trouve dans le fichier routing.yml #}
-            <li><a href="{{path('index')}}">Accueil</a></li> 
-            <li><a href="{{path('about')}}">A propos</a></li> 
-        </ul>
-        <div class="clear"></div>
-        </p>
+            
+                <img src="{{asset('bundles/bricofront/img/logo_brico_echange.jpg')}}" alt="logo BRICO" class="logobrico"/>
+           
+        <h1>BRICO ECHANGE</h1>
         <hr>
     {%endblock%}
     </header>
@@ -28,6 +27,14 @@
 {%block contenu %}{%endblock%}
 </main>
 <footer>
-{%block footer %}&copy;2018-Eni Ecole - tous droits réservés{%endblock%}
+{%block footer %}&copy;2018-Brico Echange - tous droits réservés{%endblock%}
 </footer>
+{% block javascripts %}
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
+	<script src="bundles/bricofront/js/headroom.js"></script>
+	<script src="bundles/bricofront/js/jQuery.headroom.js"></script>
+	<script src="bundles/bricofront/js/template.js"></script>
+{% endblock %}        
 {%endblock%}    
