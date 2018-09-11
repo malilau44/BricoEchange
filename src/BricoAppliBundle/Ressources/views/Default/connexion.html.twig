@@ -1,0 +1,39 @@
+{% extends 'BricoAppliBundle::base.html.twig' %}
+{% block title %} {{parent()}}connexion{%endblock%}
+
+{% block body %}
+{% block contenu %}
+    <html>
+        <head>
+            <title>Loggin</title>
+        </head>
+        <body> 
+            <fieldset><legend>Veuillez vous connecter</legend> 
+                <form action="partiPHP.php"method="POST" onsubmit="return ControleVide">
+                    
+                    <input type="radio" name="Administrateur">
+                    <input type="radio" name="Partenaire">
+                    <br>
+                    
+                    <label for="idIdentifiant">Identifiant:</label><input type="text"name="Identifiant" placeholder="votre identifiant" id="idIdentifiant" value=""><br> 
+                    <label for="idMdP">Mot de passe:</label><input type="text"name="MdP" placeholder="votre mot de passe" id="idMdP"><br>
+
+                    <p>
+                    
+                    <button name="connexion" type="submit" value="submit-true">
+                    Connexion
+                        </button>
+                       
+                        <button name="annuler" type="reset" value="submit-true">
+                    Annuler
+                        </button>
+                                </p>
+                    </script>
+
+            </fieldset>           
+        </body>
+ </html>
+{% endblock %}
+
+   
+{% endblock %}

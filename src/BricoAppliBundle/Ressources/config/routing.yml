@@ -1,4 +1,4 @@
-index:
+brico_appli_homepage:
     path:     /
     defaults: { _controller: BricoAppliBundle:Default:index }
 
