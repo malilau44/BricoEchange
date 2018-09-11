@@ -1,0 +1,30 @@
+{% extends 'BlogFrontBundle::base.html.twig' %}
+{% block title %} {{parent()}}{{title}}{%endblock%}
+
+    
+{% block contenu %}
+    <h2>Accueil - {{title}}</h2>
+    <p>Bienvenue sur notre blog! {{name}}</p>
+    <div class="clear"></div>
+    {% for key,value in posts %}
+        <div class="post">
+            <h3>{{loop.index}}/{{loop.length}} : 
+                <a href="{{path('view',{'id':key})}}">{{value.title|upper}}</a></h3>
+            <hr>
+            <p class="content">
+                {% if loop.index ==1 %}
+                    {{value.content|striptags}}
+                {% elseif loop.index ==2 %}  
+                     {{value.content|escape('html')}}
+                {% else  %}
+                    {% autoescape false %}
+                         {{value.content}}
+                    {% endautoescape %}
+                {% endif%}    
+            </p>
+            <p class="details">Le <span class="date">{{value.date}}</span>
+                par <span class="author">{{value.author|title}}</span>
+            </p>    
+        </div>
+    {%endfor%}
+{% endblock %}
